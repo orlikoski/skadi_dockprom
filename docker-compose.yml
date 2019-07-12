@@ -2,6 +2,7 @@ version: '2.1'
 
 networks:
   monitor-net:
+    name: monitor-net
     driver: bridge
 
 volumes:
@@ -122,10 +123,10 @@ services:
     image: stefanprodan/caddy
     container_name: caddy
     ports:
-      - "127.0.0.1:3000:3000"
-      - "127.0.0.1:9090:9090"
-      - "127.0.0.1:9093:9093"
-      - "127.0.0.1:9091:9091"
+      - "3000:3000"
+      - "9090:9090"
+      - "9093:9093"
+      - "9091:9091"
     volumes:
       - ./caddy/:/etc/caddy/
     environment:
